@@ -7,15 +7,12 @@ intents:
       - "Hola"
       - "Good day"
       - "How are you?"
-      - "Hiii"
+      - "Hiiii"
     responses:
       - "Are you ready to talk about your feelings?"
-      - "Good to see you again. Would you tell me how you're feeling now?\n(You can choose from: really happy, happy,
-        ok, neutral, tired, angry, sad, stressed, anxious or depressed)"
+      - "Good to see you again. Would you tell me how you're feeling now?"
       - "Let's talk about your current mood!"
-      - "I missed you!!! How are you feeling?\n(If you don't now how to name this feeling, you can choose from:
-        really happy, happy, ok, neutral, tired, angry,
-        sad, stressed, anxious or depressed)"
+      - "I missed you!!! How are you feeling?\n"
     context:
       - ''
   - tag: agree
@@ -24,11 +21,11 @@ intents:
       - "Let's do it!"
       - "Always"
       - "Yeah"
+      - "Of course"
     responses:
-      - "Tell me, how you are feeling now :)
-        (If you don't now how to name this feeling, you can choose from: really happy, happy, ok, neutral, tired,
-        angry, sad, stressed, anxious or, depressed)"
+      - "Tell me, how you are feeling now :)"
       - "Cool :) Could you name your current mood?"
+      - "That's what I wanted to hear ;) How are you feeling now?"
     context:
       - ''
   - tag: goodbye
@@ -91,7 +88,7 @@ intents:
   - tag: ok
     patterns:
       - "I'm ok"
-      - "Fine"
+      - "I'm fine"
       - "Nothing special"
       - "Okay"
       - "Feeling alright"

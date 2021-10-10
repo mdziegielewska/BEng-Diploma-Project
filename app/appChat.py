@@ -63,15 +63,15 @@ class Chat(Frame):
         self.chatBox.config(state=NORMAL)
         self.chatBox.config(foreground="#446665", font=("Helvetica", 10))
 
-        file = open('app.data/data.yaml', 'rb')
-        tempFile = open('app.data/tempData.yaml', 'wb')
+        file = open('appData/data.yaml', 'rb')
+        tempFile = open('appData/tempData.yaml', 'wb')
         decrypt(file, tempFile)
 
         tempFile.close()
         file.close()
 
         # read a name from file
-        with open('app.data/tempData.yaml', 'r') as tempFile:
+        with open('appData/tempData.yaml', 'rb') as tempFile:
             getName = yaml.safe_load(tempFile)
             name = getName['Name']
             # if the name is null, ask for it
@@ -80,12 +80,19 @@ class Chat(Frame):
                 # note that it is the first chat
                 self.firstChat = True
             else:
-                # start a normal conversation
-                res = "Hello " + name + "!"
+                # verify number of days with lowered mood in the last month
+                if countLowDays() > 15:
+                    # inform user about long-term lowered mood
+                    res = "Hello " + name + "! \nMy system has detected a long-term depressed mood. I'm worried " \
+                                               ":( Remember, I'm here for you. If it is possible, consult this " \
+                                               "with a specialist. Seeking help is nothing humiliating."
+                else:
+                    # start a normal conversation
+                    res = "Hello " + name + "!"
 
         tempFile.close()
 
-        with open('app.data/tempData.yaml', 'w'):
+        with open('appData/tempData.yaml', 'w'):
             pass
 
         # insert into the chat box
@@ -108,6 +115,7 @@ class Chat(Frame):
             # if the chat is the first chat, save the name data into the file
             if self.firstChat is True:
                 res = saveNameData(msg)
+
                 # note that the rest of the conversation will not be first chat anymore
                 self.firstChat = False
             else:

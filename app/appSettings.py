@@ -57,7 +57,7 @@ class Settings(Frame):
         self.canvas = Canvas(self, height=150, width=150, bg="#f3f3cc")
         self.canvas.place(x=145, y=255)
 
-        self.logo = ImageTk.PhotoImage(Image.open("app.images/logo.png"))
+        self.logo = ImageTk.PhotoImage(Image.open("appImages/logo.png"))
         self.canvas.create_image(77, 77, image=self.logo)
 
         # contact info
@@ -81,21 +81,21 @@ class Settings(Frame):
         if newName != '':
             self.name.config(state=NORMAL)
 
-            file = open('app.data/data.yaml', 'rb')
-            tempFile = open('app.data/tempData.yaml', 'wb')
+            file = open('appData/data.yaml', 'rb')
+            tempFile = open('appData/tempData.yaml', 'wb')
             decrypt(file, tempFile)
 
             tempFile.close()
             file.close()
 
             # load a file to save data
-            with open('app.data/tempData.yaml', 'r') as tempFile:
+            with open('appData/tempData.yaml', 'r') as tempFile:
                 data = yaml.safe_load(tempFile)
                 data['Name'] = newName
 
             if data:
                 # write into the file
-                with open('app.data/tempData.yaml', 'w') as tempFile:
+                with open('appData/tempData.yaml', 'w') as tempFile:
                     yaml.safe_dump(data, tempFile, sort_keys=False)
 
                     # print the info
@@ -103,12 +103,12 @@ class Settings(Frame):
 
             tempFile.close()
 
-            tempFile = open('app.data/tempData.yaml', 'rb')
-            file = open('app.data/data.yaml', 'wb')
+            tempFile = open('appData/tempData.yaml', 'rb')
+            file = open('appData/data.yaml', 'wb')
             encrypt(tempFile, file)
 
             tempFile.close()
             file.close()
 
-            with open('app.data/tempData.yaml', 'w'):
+            with open('appData/tempData.yaml', 'w'):
                 pass

@@ -13,7 +13,7 @@ words = []
 classes = []
 documents = []
 ignoreLetters = ['!', '?', ',', '.']
-intentsFile = open('chatbot.model/intents.yaml').read()
+intentsFile = open('chatbotModel/intents.yaml').read()
 intents = yaml.safe_load(intentsFile)
 
 for intent in intents['intents']:
@@ -44,11 +44,11 @@ print(len(words), "unique words")
 print(words)
 
 # serialize words
-wordsFile = open('chatbot.model/words.pkl', 'wb')
+wordsFile = open('chatbotModel/words.pkl', 'wb')
 pickle.dump(words, wordsFile)
 wordsFile.close()
 # serialize classes
-classesFile = open('chatbot.model/classes.pkl', 'wb')
+classesFile = open('chatbotModel/classes.pkl', 'wb')
 pickle.dump(classes, classesFile)
 classesFile.close()
 
@@ -99,6 +99,6 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 
 # fitting and saving the model
 hist = model.fit(np.array(trainX), np.array(trainY), epochs=200, batch_size=5, verbose=1)
-model.save('chatbot.model/chatbotModel.h5', hist)
+model.save('chatbotModel/chatbotModel.h5', hist)
 
 print("model created")

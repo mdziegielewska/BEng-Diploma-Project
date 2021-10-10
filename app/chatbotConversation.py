@@ -4,15 +4,14 @@ import pickle
 import numpy as np
 from keras.models import load_model
 import random
-import yaml
 
 from dataFunctions import *
 
 lemmatizer = WordNetLemmatizer()
-model = load_model('chatbot.model/chatbotModel.h5')
-intents = yaml.safe_load(open('chatbot.model/intents.yaml').read())
-words = pickle.load(open('chatbot.model/words.pkl', 'rb'))
-classes = pickle.load(open('chatbot.model/classes.pkl', 'rb'))
+model = load_model('chatbotModel/chatbotModel.h5')
+intents = yaml.safe_load(open('chatbotModel/intents.yaml').read())
+words = pickle.load(open('chatbotModel/words.pkl', 'rb'))
+classes = pickle.load(open('chatbotModel/classes.pkl', 'rb'))
 
 
 # text preprocessing

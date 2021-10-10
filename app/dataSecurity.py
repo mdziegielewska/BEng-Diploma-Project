@@ -1,6 +1,6 @@
 from Crypto.Cipher import AES
 
-key = open('app.data/data.key', 'r').read()
+key = open('appData/data.key', 'r').read()
 key = bytes.fromhex(key)
 bufferSize = 32768  # 32kb
 
@@ -31,8 +31,3 @@ def decrypt(inputFile, outputFile):
 
     inputFile.close()
     outputFile.close()
-
-
-"""ifile = open('decrypted.yaml', 'rb')
-ofile = open('data.yaml', 'wb')
-encrypt(ifile, ofile)"""

@@ -8,7 +8,7 @@ class App(Tk):
         Tk.__init__(self, *args, **kwargs)
         self.title("Mood Tracker")
         self.geometry("450x600")
-        self.iconbitmap('app.images/logoIcon.ico')
+        self.iconbitmap('appImages/logoIcon.ico')
         self.resizable(width=FALSE, height=FALSE)
         self.configure(background="#f3f3cc")
         self.currentFrame = None

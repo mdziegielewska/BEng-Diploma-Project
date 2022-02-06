@@ -1,3 +1,9 @@
+"""
+Marta Dzięgielewska
+Projekt dyplomowy inżynierski: Przykłady wykorzystania sztucznej inteligencji w psychologii
+Promotor: dr inż Paweł Syty
+"""
+
 import yaml
 from pandas import DataFrame, concat
 

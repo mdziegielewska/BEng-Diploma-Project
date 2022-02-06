@@ -258,5 +258,6 @@ intents:
     responses:
       - "I'm not sure if I can understand you well :( Could you repeat?"
       - "I'm sorry but I don't understand you"
+      - "My system cannot recognize what you are saying"
     context:
       - ''

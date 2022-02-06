@@ -1,8 +1,10 @@
-from tkinter import *
+"""
+Marta Dzięgielewska
+Projekt dyplomowy inżynierski: Przykłady wykorzystania sztucznej inteligencji w psychologii
+Promotor: dr inż Paweł Syty
+"""
 
-import matplotlib
-from pandas import DataFrame, concat
-import seaborn as sns
+from tkinter import *
 
 import numpy as np
 from matplotlib.figure import Figure

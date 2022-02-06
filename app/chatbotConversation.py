@@ -1,11 +1,20 @@
+"""
+Marta Dzięgielewska
+Projekt dyplomowy inżynierski: Przykłady wykorzystania sztucznej inteligencji w psychologii
+Promotor: dr inż Paweł Syty
+"""
+
 import nltk
 from nltk.stem import WordNetLemmatizer
 import pickle
 import numpy as np
 from keras.models import load_model
 import random
+import warnings
 
 from dataFunctions import *
+
+warnings.filterwarnings('ignore')
 
 lemmatizer = WordNetLemmatizer()
 model = load_model('chatbotModel/chatbotModel.h5')

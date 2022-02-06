@@ -1,9 +1,15 @@
+"""
+Marta Dzięgielewska
+Projekt dyplomowy inżynierski: Przykłady wykorzystania sztucznej inteligencji w psychologii
+Promotor: dr inż Paweł Syty
+"""
+
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
-from keras.optimizers import SGD
 import random
 import nltk
+from keras.optimizer_v2.gradient_descent import SGD
 from nltk.stem import WordNetLemmatizer
 import yaml
 import pickle
@@ -88,9 +94,9 @@ print("Training data created")
 # intents to predict output intent with softmax
 model = Sequential()
 model.add(Dense(128, input_shape=(len(trainX[0]),), activation='relu'))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(64, activation='relu'))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(len(trainY[0]), activation='softmax'))
 
 # stochastic gradient descent with Nesterov accelerated gradient
@@ -98,7 +104,7 @@ sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 # fitting and saving the model
-hist = model.fit(np.array(trainX), np.array(trainY), epochs=200, batch_size=5, verbose=1)
+hist = model.fit(np.array(trainX), np.array(trainY), epochs=200, batch_size=8, verbose=1)
 model.save('chatbotModel/chatbotModel.h5', hist)
 
 print("model created")

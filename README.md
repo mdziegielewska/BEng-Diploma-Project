@@ -1,4 +1,4 @@
-# Bcs-Diploma-Project
+# BEng-Diploma-Project
 
 ## Examples of the use of Artificial Intelligence in psychology
 

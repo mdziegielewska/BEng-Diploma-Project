@@ -17,15 +17,15 @@ This Python project implements a chatbot named "Mood Tracker" designed to collec
   - appImages: Contains graphical assets used within the app's interface.
   - chatbotModel: Stores the trained model data used by the chatbot.
 - **Python Scripts**
-  - appCharts.py: Generates and displays insightful visualizations based on user data.
-  - appChat.py: Implements the core logic for chatbot interaction and mood collection.
-  - appRoot.py: Serves as the main entry point for the application.
-  - appSettings.py: Manages configuration options for the application.
-  - chatbotConversation.py: Handles the flow and structure of user conversations with the chatbot.
-  - chatbotTrain.py: Responsible for training and improving the chatbot model.
-  - dataFunctions.py: Contains functions for efficient data manipulation and management.
-  - dataSecurity.py: Ensures security and privacy measures for user data.
-  - dataSupport.py: Provides auxiliary functions for various data-related tasks.
+  - _appCharts.py_: Generates and displays insightful visualizations based on user data.
+  - _appChat.py_: Implements the core logic for chatbot interaction and mood collection.
+  - _appRoot.py_: Serves as the main entry point for the application.
+  - _appSettings.py_: Manages configuration options for the application.
+  - _chatbotConversation.py_: Handles the flow and structure of user conversations with the chatbot.
+  - _chatbotTrain.py_: Responsible for training and improving the chatbot model.
+  - _dataFunctions.py_: Contains functions for efficient data manipulation and management.
+  - _dataSecurity.py_: Ensures security and privacy measures for user data.
+  - _dataSupport.py_: Provides auxiliary functions for various data-related tasks.
 
 
 ### Future Work
